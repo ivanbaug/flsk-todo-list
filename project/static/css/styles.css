@@ -1,0 +1,28 @@
+body {
+  background-color: #DDDDDD;
+}
+
+/* Modify the navbar background color */
+.navbar-custom {
+  background-color: #125D98;
+}
+
+.card-header-custom {
+  background-color: #e4ac32;
+}
+
+.footer-bg-custom {
+  background-color: #454a4f;
+}
+
+.button-bg-custom {
+  background-color: #033888;
+}
+
+
+/* Container max width */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}

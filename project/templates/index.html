@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <h1>hi :)</h1>
+  <form action="/new-list" class="card mt-3">
+    <div class="card-header card-header-custom text-black-70">
+      <div class="form-group row">
+        <label for="inputListName" class="col-sm-2 col-form-label">
+          List name:
+        </label>
+        <div class="col-sm-10">
+          <input type="text" value="My list 2021-11-24" class="form-control">
+        </div>
+      </div>
+    </div>
+
+    <div class="card-body">
+
+      <div class="form-row mb-2">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="New task">
+        </div>
+      </div>
+      <input class="btn btn-primary button-bg-custom" type="submit" value="Save list">
+    </div>
+  </form>
+
+
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card mx-auto my-5">
+  <div class="card-header text-white text-center card-header-custom">
+    <strong>Signup</strong>
+  </div>
+  <div class="card-body">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="alert alert-danger" role="alert">
+      {{ messages[0] }}. Go to <a href="{{ url_for('auth.login') }}">login page</a>.
+    </div>
+    {% endif %}
+    {% endwith %}
+    <form method="POST" action="/signup" class="d-grid gap-3">
+      {{ form.csrf_token }}
+      <div class="form-group">
+        {{ form.name(class='form-control', placeholder='Your Name') }}
+      </div>
+      <div class="form-group">
+        {{ form.email(class='form-control', placeholder='Your e-mail') }}
+      </div>
+      <div class="form-group">
+        {{ form.password(class='form-control', placeholder='Password') }}
+      </div>
+      <div class="form-group">
+        {{ form.confirm(class='form-control', placeholder='Confirm your password') }}
+      </div>
+      <div class="float-right">
+        {{ form.submit(class='btn btn-success') }}
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock content %}
