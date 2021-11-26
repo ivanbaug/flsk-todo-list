@@ -17,6 +17,8 @@ BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 # https://flask-sqlalchemy.palletsprojects.com/en/2.x/config/
 SQLALCHEMY_DATABASE_URI = os.environ.get("DB_URI")
 DATABASE_CONNECT_OPTIONS = {}
+# TODO: Uncomment before deploying
+SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 # Application threads. A common general assumption is
 # using 2 per available processor cores - to handle
