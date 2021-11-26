@@ -2,43 +2,47 @@
 {% block content %}
 <div class="container">
 
-  <form action="/new-list" class="card mt-3">
-    <div class="card-header card-header-custom text-black-70">
-      <div class="form-group row">
-        <label for="inputListName" class="col-sm-2 col-form-label">
-          List name:
-        </label>
-        <div class="col-sm-10">
-          <input type="text" value="My list 2021-11-24" class="form-control">
-        </div>
-      </div>
+  <div class="card mt-3">
+    <div class="card-header card-header-custom text-black-70 d-flex justify-content-between align-items-center">
+      <label for="inputListName">List name:</label>
+      <form action="" method="post" class="flex-grow-1 ms-2">
+        <input type="text" value="My list 2021-11-24" class="form-control">
+      </form>
     </div>
-
     <div class="card-body">
-
-      <div class="form-row mb-2">
-        <div class="row">
-          <div class="col">
-            <input type="text" class="form-control" placeholder="New task">
-          </div>
-          <div class="col-1">
-            <button class="btn btn-secondary"><i class="fas fa-plus"></i></button>
-          </div>
-        </div>
-
+      <div class="row mb-2">
+        <form id="new-task-form" class="d-flex justify-content-between">
+          <input type="text" class="form-control" id="ntask-input" placeholder="New task">
+          <button class="btn btn-secondary ms-2"><i class="fas fa-plus"></i></button>
+        </form>
       </div>
+      <!-- Placeholder for list -->
+      <ul class="list-group" id="new-tdlist">
 
-      <div class="form-row">
+      </ul>
+      <div class="row mt-3">
         <div class="col ">
-          <input class="btn btn-custom" type="submit" value="Save list">
+          <button class="btn btn-custom">Save list</button>
         </div>
       </div>
-
     </div>
-  </form>
-
-
-
+  </div>
 </div>
 
+<template id="template-task">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+      <label class="form-check-label" for="flexCheckDefault">
+        An item
+      </label>
+    </div>
+    <button class="btn btn-outline-danger btn-sm ms-2"><i class="far fa-trash-alt"></i></button>
+  </li>
+</template>
 {% endblock content %}
+
+{% block scripts %}
+<script src="{{url_for('static', filename='js/new_task.js')}}"></script>
+{{ super() }}
+{% endblock scripts %}

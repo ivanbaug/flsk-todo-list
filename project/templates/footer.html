@@ -2,10 +2,8 @@
 <div class="wrapper flex-grow-1"></div>
 <footer class="container-fluid py-2 navbar-fixed-bottom">
   <hr class="myhr">
-  <!-- TODO: auto update year -->
-
   <div class="text-center text-black-50">
-    Copyright © Ivan Bautista <span id="cdate">2021</span>
+    Copyright © Ivan Bautista <span id="cdate">2020</span>
   </div>
   <div class="text-center text-black-50">
     Find the code on my
@@ -18,3 +16,7 @@
     </a>
   </div>
 </footer>
+<!-- Auto update year -->
+<script type="text/javascript">
+  document.getElementById("cdate").innerHTML = new Date().getFullYear();
+</script>
