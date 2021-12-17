@@ -36,7 +36,6 @@ const displayTasks = () =>{
   newTDList.innerHTML = '';
   // console.log(taskTemplate)
   Object.values(tasks).forEach(task => {
-
     const clone = taskTemplate.cloneNode(true);
     clone.querySelector('label').textContent = task.text;
     fragment.appendChild(clone);
